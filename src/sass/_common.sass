@@ -1,0 +1,99 @@
+// # SHORT HOWTO
+// ## Sprites
+//     .whatever
+// 			+s(codedby) 
+// ## gradient example
+//     	+g(#232323, #5c5c5c);
+//	   horizontal
+//     	+gh(#232323, #5c5c5c);
+// ## making bw-images
+//     img
+//			@extend %gray
+// ## predefined media-queries: https://github.com/paranoida/sass-mediaqueries
+//     +r(320)
+//			display: none
+// +max-screen(1000), +iphone5, +iphone4, +ipad-retina, +ipad, +hdpi - also available
+//
+// ## use cycles
+//     @for $i from 1 through 3
+//       .item-#{$i}
+//			width: 2em * $i;
+//     @each $s in a,b,c
+// 	    	#{$s}
+//				display: none
+// ## fonts
+// Save fonts to /src/fonts
+// +font(book, cytiapro-black-webfont)
+// and create mixin
+// =book
+// 	font-family: "book", Arial, sans-serif
+
+@font-face 
+  font-family: "MyriadProRegular"
+  src: url("../fonts/MyriadProRegular/MyriadProRegular.eot")
+  src: url("../fonts/MyriadProRegular/MyriadProRegular.eot?#iefix") format("embedded-opentype"), url("../fonts/MyriadProRegular/MyriadProRegular.woff") format("woff"), url("../fonts/MyriadProRegular/MyriadProRegular.ttf") format("truetype")
+  font-style: normal
+  font-weight: normal
+
+@font-face 
+  font-family: "MyriadProRegular"
+  src: url("../fonts/MyriadProBold/MyriadProBold.eot")
+  src: url("../fonts/MyriadProBold/MyriadProBold.eot?#iefix") format("embedded-opentype"), url("../fonts/MyriadProBold/MyriadProBold.woff") format("woff"), url("../fonts/MyriadProBold/MyriadProBold.ttf") format("truetype")
+  font-style: normal
+  font-weight: 700
+
+@font-face
+  font-family: "MyriadProRegular"
+  src: url("../fonts/MyriadProItalic/MyriadProItalic.eot")
+  src: url("../fonts/MyriadProItalic/MyriadProItalic.eot?#iefix") format("embedded-opentype"), url("../fonts/MyriadProItalic/MyriadProItalic.woff") format("woff"), url("../fonts/MyriadProItalic/MyriadProItalic.ttf") format("truetype")
+  font-style: italic
+  font-weight: normal
+/* font-family: "MyriadProSemiBold"; */
+@font-face
+  font-family: "MyriadProRegular"
+  src: url("../fonts/MyriadProSemiBold/MyriadProSemiBold.eot")
+  src: url("../fonts/MyriadProSemiBold/MyriadProSemiBold.eot?#iefix") format("embedded-opentype"), url("../fonts/MyriadProSemiBold/MyriadProSemiBold.woff") format("woff"), url("../fonts/MyriadProSemiBold/MyriadProSemiBold.ttf") format("truetype")
+  font-style: normal
+  font-weight: 900
+/* font-family: "MyriadProBoldItalic"; */
+@font-face
+  font-family: "MyriadProRegular"
+  src: url("../fonts/MyriadProBoldItalic/MyriadProBoldItalic.eot")
+  src: url("../fonts/MyriadProBoldItalic/MyriadProBoldItalic.eot?#iefix") format("embedded-opentype"), url("../fonts/MyriadProBoldItalic/MyriadProBoldItalic.woff") format("woff"), url("../fonts/MyriadProBoldItalic/MyriadProBoldItalic.ttf") format("truetype")
+  font-style: italic
+  font-weight: 700
+/* font-family: "MyriadProSemiBoldItalic"; */
+@font-face
+  font-family: "MyriadProRegular"
+  src: url("../fonts/MyriadProSemiBoldItalic/MyriadProSemiBoldItalic.eot")
+  src: url("../fonts/MyriadProSemiBoldItalic/MyriadProSemiBoldItalic.eot?#iefix") format("embedded-opentype"), url("../fonts/MyriadProSemiBoldItalic/MyriadProSemiBoldItalic.woff") format("woff"), url("../fonts/MyriadProSemiBoldItalic/MyriadProSemiBoldItalic.ttf") format("truetype")
+  font-style: italic
+  font-weight: 900
+
+
+body
+  font-family: "MyriadProRegular", sans-serif
+  font-size: 16px
+  line-height: 1.4
+  background: #fdfdfd url(../img/body.png) 0 0 repeat
+  color: #515151
+
+.sr-only
+  position: absolute
+  width: 1px
+  height: 1px
+  padding: 0
+  margin: -1px
+  overflow: hidden
+  clip: rect(0,0,0,0)
+  border: 0
+
+img
+  max-width: 100%
+  height: auto
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration 
+  display: none

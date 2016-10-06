@@ -1,0 +1,113 @@
+@font-face
+	font-family: "svgfont"
+	src: url('fonts/svgfont.eot')
+	src: url('fonts/svgfont.eot?#iefix') format('eot'), url('fonts/svgfont.woff') format('woff'), url('fonts/svgfont.woff2') format('woff2'), url('fonts/svgfont.ttf') format('truetype')
+	font-weight: normal
+	font-style: normal
+
+$icon-alarm: "\EA01"
+$icon-bomb: "\EA02"
+$icon-computer-secure: "\EA03"
+$icon-hacked-computer: "\EA04"
+$icon-infected-file: "\EA05"
+$icon-infected-folder: "\EA06"
+$icon-key: "\EA07"
+$icon-life-preserver: "\EA08"
+$icon-locked-email: "\EA09"
+$icon-magnifying-glass: "\EA0A"
+$icon-open-padlock: "\EA0B"
+$icon-password: "\EA0C"
+$icon-secure-cloud: "\EA0D"
+$icon-secure-download: "\EA0E"
+$icon-secure-file: "\EA0F"
+$icon-secure-pendrive: "\EA10"
+$icon-secure-smartphone: "\EA11"
+$icon-security-camera: "\EA12"
+$icon-security-code-1: "\EA13"
+$icon-security-code: "\EA14"
+$icon-shield: "\EA15"
+$icon-spam: "\EA16"
+$icon-spy-1: "\EA17"
+$icon-spy-alarm-on-laptop: "\EA18"
+$icon-spy: "\EA19"
+$icon-strongbox: "\EA1A"
+$icon-trojan: "\EA1B"
+$icon-virus: "\EA1C"
+$icon-wall: "\EA1D"
+$icon-warning: "\EA1E"
+
+
+%icon
+	font-family: "svgfont"
+	font-style: normal
+	font-weight: normal
+	text-rendering: auto
+	speak: none
+	line-height: 1
+	-webkit-font-smoothing: antialiased
+	-moz-osx-font-smoothing: grayscale
+
+.icon, [class^="icon-"], [class*=" icon-"]
+	@extend %icon
+	display: inline-block
+
+.icon-alarm:before
+	content: $icon-alarm
+.icon-bomb:before
+	content: $icon-bomb
+.icon-computer-secure:before
+	content: $icon-computer-secure
+.icon-hacked-computer:before
+	content: $icon-hacked-computer
+.icon-infected-file:before
+	content: $icon-infected-file
+.icon-infected-folder:before
+	content: $icon-infected-folder
+.icon-key:before
+	content: $icon-key
+.icon-life-preserver:before
+	content: $icon-life-preserver
+.icon-locked-email:before
+	content: $icon-locked-email
+.icon-magnifying-glass:before
+	content: $icon-magnifying-glass
+.icon-open-padlock:before
+	content: $icon-open-padlock
+.icon-password:before
+	content: $icon-password
+.icon-secure-cloud:before
+	content: $icon-secure-cloud
+.icon-secure-download:before
+	content: $icon-secure-download
+.icon-secure-file:before
+	content: $icon-secure-file
+.icon-secure-pendrive:before
+	content: $icon-secure-pendrive
+.icon-secure-smartphone:before
+	content: $icon-secure-smartphone
+.icon-security-camera:before
+	content: $icon-security-camera
+.icon-security-code-1:before
+	content: $icon-security-code-1
+.icon-security-code:before
+	content: $icon-security-code
+.icon-shield:before
+	content: $icon-shield
+.icon-spam:before
+	content: $icon-spam
+.icon-spy-1:before
+	content: $icon-spy-1
+.icon-spy-alarm-on-laptop:before
+	content: $icon-spy-alarm-on-laptop
+.icon-spy:before
+	content: $icon-spy
+.icon-strongbox:before
+	content: $icon-strongbox
+.icon-trojan:before
+	content: $icon-trojan
+.icon-virus:before
+	content: $icon-virus
+.icon-wall:before
+	content: $icon-wall
+.icon-warning:before
+	content: $icon-warning

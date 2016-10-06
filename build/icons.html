@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Iconfont Preview</title>
+  <style type="text/css" media="all">
+  	body{
+  		font-family: Helvetica, Arial,sans-serif;
+  		padding: 30px;
+  		margin: 0;
+  	}
+    @font-face {
+      font-family: "svgfont";
+      src: url('css/fonts/svgfont.eot');
+      src: url('css/fonts/svgfont.eot?#iefix') format('eot'),
+        url('css/fonts/svgfont.woff2') format('woff2'),
+        url('css/fonts/svgfont.woff') format('woff'),
+        url('css/fonts/svgfont.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+    }
+    h1 {
+      text-align: left;
+      font-weight: normal;
+      font-size: 33px;
+      font-weight: 100;
+      margin-bottom: 45px;
+    }
+    .size{
+    	margin-left: 30px;
+    	color: #888;
+    }
+    .size input{
+    	width: 300px;
+    }
+    .icons-list {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      font-size: 0;
+      text-align: center;
+      -webkit-columns: 4;
+    }
+    .icon-box {
+      display: inline-block;
+      vertical-align: middle;
+      min-width: 200px;
+      min-height: 200px;
+      border-radius: 5px;
+    }
+    .icon-container {
+      min-height: 100px;
+      text-align: center;
+      font-size: 60px;
+      text-align: left;
+      padding-top: 10px;
+    }
+    .icon-box input {
+      display: inline-block;
+      vertical-align: top;
+      width: 100%;
+      box-sizing: border-box;
+      font-size: 12px;
+      border-radius: 5px;
+      height: 30px;
+      padding: 0;
+      text-align: center;
+      border: 1px solid #CCC;
+      -webkit-appearance: none;
+    }
+    .icon-box .icon-class-name {
+      width: 70%;
+    }
+    .icon-box .icon-unicode {
+      width: 30%;
+      font-size: 10px;
+      color: #ccc;
+      border: none;
+      text-align: left;
+      padding-left: 10px;
+    }
+    .icon {
+      font-family: "svgfont";
+      display: inline-block;
+      vertical-align: middle;
+      font-style: normal;
+      font-weight: normal;
+      text-rendering: auto;
+      speak: none;
+      min-width: 1em;
+      line-height: 1;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    
+    .icon-alarm:before {
+      content: "\EA01";
+    }
+    .icon-bomb:before {
+      content: "\EA02";
+    }
+    .icon-computer-secure:before {
+      content: "\EA03";
+    }
+    .icon-hacked-computer:before {
+      content: "\EA04";
+    }
+    .icon-infected-file:before {
+      content: "\EA05";
+    }
+    .icon-infected-folder:before {
+      content: "\EA06";
+    }
+    .icon-key:before {
+      content: "\EA07";
+    }
+    .icon-life-preserver:before {
+      content: "\EA08";
+    }
+    .icon-locked-email:before {
+      content: "\EA09";
+    }
+    .icon-magnifying-glass:before {
+      content: "\EA0A";
+    }
+    .icon-open-padlock:before {
+      content: "\EA0B";
+    }
+    .icon-password:before {
+      content: "\EA0C";
+    }
+    .icon-secure-cloud:before {
+      content: "\EA0D";
+    }
+    .icon-secure-download:before {
+      content: "\EA0E";
+    }
+    .icon-secure-file:before {
+      content: "\EA0F";
+    }
+    .icon-secure-pendrive:before {
+      content: "\EA10";
+    }
+    .icon-secure-smartphone:before {
+      content: "\EA11";
+    }
+    .icon-security-camera:before {
+      content: "\EA12";
+    }
+    .icon-security-code-1:before {
+      content: "\EA13";
+    }
+    .icon-security-code:before {
+      content: "\EA14";
+    }
+    .icon-shield:before {
+      content: "\EA15";
+    }
+    .icon-spam:before {
+      content: "\EA16";
+    }
+    .icon-spy-1:before {
+      content: "\EA17";
+    }
+    .icon-spy-alarm-on-laptop:before {
+      content: "\EA18";
+    }
+    .icon-spy:before {
+      content: "\EA19";
+    }
+    .icon-strongbox:before {
+      content: "\EA1A";
+    }
+    .icon-trojan:before {
+      content: "\EA1B";
+    }
+    .icon-virus:before {
+      content: "\EA1C";
+    }
+    .icon-wall:before {
+      content: "\EA1D";
+    }
+    .icon-warning:before {
+      content: "\EA1E";
+    }
+  </style>
+</head>
+<body>
+  <h1>Icons: <span id="count"></span>
+	<label class="size">
+	  Icon size <span id="change-value">60</span>
+	  <input type="range" id="change-size" min="5" max="100" value="60">
+	</label>
+  </h1>
+
+  <ul class="icons-list">
+    
+    <li class="icon-box">
+      <input class="icon-class-name autoselect" type="text" value=".icon-alarm" readonly>
+      <input class="icon-unicode autoselect" type="text" value="\EA01" readonly>
+      <div class="icon-container">
+        <i class="icon icon-alarm"></i>
+      </div>
+    </li>
+    
+    <li class="icon-box">
+      <input class="icon-class-name autoselect" type="text" value=".icon-bomb" readonly>
+      <input class="icon-unicode autoselect" type="text" value="\EA02" readonly>
+      <div class="icon-container">
+        <i class="icon icon-bomb"></i>
+      </div>
+    </li>
+    
+    <li class="icon-box">
+      <input class="icon-class-name autoselect" type="text" value=".icon-computer-secure" readonly>
+      <input class="icon-unicode autoselect" type="text" value="\EA03" readonly>
+      <div class="icon-container">
+        <i class="icon icon-computer-secure"></i>
+      </div>
+    </li>
+    
+    <li class="icon-box">
+      <input class="icon-class-name autoselect" type="text" value=".icon-hacked-computer" readonly>
+      <input class="icon-unicode autoselect" type="text" value="\EA04" readonly>
+      <div class="icon-container">
+        <i class="icon icon-hacked-computer"></i>
+      </div>
+    </li>
+    
+    <li class="icon-box">
+      <input class="icon-class-name autoselect" type="text" value=".icon-infected-file" readonly>
+      <input class="icon-unicode autoselect" type="text" value="\EA05" readonly>
+      <div class="icon-container">
+        <i class="icon icon-infected-file"></i>
+      </div>
+    </li>
+    
+    <li class="icon-box">
+      <input class="icon-class-name autoselect" type="text" value=".icon-infected-folder" readonly>
+      <input class="icon-unicode autoselect" type="text" value="\EA06" readonly>
+      <div class="icon-container">
+        <i class="icon icon-infected-folder"></i>
+      </div>
+    </li>
+    
+    <li class="icon-box">
+      <input class="icon-class-name autoselect" type="text" value=".icon-key" readonly>
+      <input class="icon-unicode autoselect" type="text" value="\EA07" readonly>
+      <div class="icon-container">
+        <i class="icon icon-key"></i>
+      </div>
+    </li>
+    
+    <li class="icon-box">
+      <input class="icon-class-name autoselect" type="text" value=".icon-life-preserver" readonly>
+      <input class="icon-unicode autoselect" type="text" value="\EA08" readonly>
+      <div class="icon-container">
+        <i class="icon icon-life-preserver"></i>
+      </div>
+    </li>
+    
+    <li class="icon-box">
+      <input class="icon-class-name autoselect" type="text" value=".icon-locked-email" readonly>
+      <input class="icon-unicode autoselect" type="text" value="\EA09" readonly>
+      <div class="icon-container">
+        <i class="icon icon-locked-email"></i>
+      </div>
+    </li>
+    
+    <li class="icon-box">
+      <input class="icon-class-name autoselect" type="text" value=".icon-magnifying-glass" readonly>
+      <input class="icon-unicode autoselect" type="text" value="\EA0A" readonly>
+      <div class="icon-container">
+        <i class="icon icon-magnifying-glass"></i>
+      </div>
+    </li>
+    
+    <li class="icon-box">
+      <input class="icon-class-name autoselect" type="text" value=".icon-open-padlock" readonly>
+      <input class="icon-unicode autoselect" type="text" value="\EA0B" readonly>
+      <div class="icon-container">
+        <i class="icon icon-open-padlock"></i>
+      </div>
+    </li>
+    
+    <li class="icon-box">
+      <input class="icon-class-name autoselect" type="text" value=".icon-password" readonly>
+      <input class="icon-unicode autoselect" type="text" value="\EA0C" readonly>
+      <div class="icon-container">
+        <i class="icon icon-password"></i>
+      </div>
+    </li>
+    
+    <li class="icon-box">
+      <input class="icon-class-name autoselect" type="text" value=".icon-secure-cloud" readonly>
+      <input class="icon-unicode autoselect" type="text" value="\EA0D" readonly>
+      <div class="icon-container">
+        <i class="icon icon-secure-cloud"></i>
+      </div>
+    </li>
+    
+    <li class="icon-box">
+      <input class="icon-class-name autoselect" type="text" value=".icon-secure-download" readonly>
+      <input class="icon-unicode autoselect" type="text" value="\EA0E" readonly>
+      <div class="icon-container">
+        <i class="icon icon-secure-download"></i>
+      </div>
+    </li>
+    
+    <li class="icon-box">
+      <input class="icon-class-name autoselect" type="text" value=".icon-secure-file" readonly>
+      <input class="icon-unicode autoselect" type="text" value="\EA0F" readonly>
+      <div class="icon-container">
+        <i class="icon icon-secure-file"></i>
+      </div>
+    </li>
+    
+    <li class="icon-box">
+      <input class="icon-class-name autoselect" type="text" value=".icon-secure-pendrive" readonly>
+      <input class="icon-unicode autoselect" type="text" value="\EA10" readonly>
+      <div class="icon-container">
+        <i class="icon icon-secure-pendrive"></i>
+      </div>
+    </li>
+    
+    <li class="icon-box">
+      <input class="icon-class-name autoselect" type="text" value=".icon-secure-smartphone" readonly>
+      <input class="icon-unicode autoselect" type="text" value="\EA11" readonly>
+      <div class="icon-container">
+        <i class="icon icon-secure-smartphone"></i>
+      </div>
+    </li>
+    
+    <li class="icon-box">
+      <input class="icon-class-name autoselect" type="text" value=".icon-security-camera" readonly>
+      <input class="icon-unicode autoselect" type="text" value="\EA12" readonly>
+      <div class="icon-container">
+        <i class="icon icon-security-camera"></i>
+      </div>
+    </li>
+    
+    <li class="icon-box">
+      <input class="icon-class-name autoselect" type="text" value=".icon-security-code-1" readonly>
+      <input class="icon-unicode autoselect" type="text" value="\EA13" readonly>
+      <div class="icon-container">
+        <i class="icon icon-security-code-1"></i>
+      </div>
+    </li>
+    
+    <li class="icon-box">
+      <input class="icon-class-name autoselect" type="text" value=".icon-security-code" readonly>
+      <input class="icon-unicode autoselect" type="text" value="\EA14" readonly>
+      <div class="icon-container">
+        <i class="icon icon-security-code"></i>
+      </div>
+    </li>
+    
+    <li class="icon-box">
+      <input class="icon-class-name autoselect" type="text" value=".icon-shield" readonly>
+      <input class="icon-unicode autoselect" type="text" value="\EA15" readonly>
+      <div class="icon-container">
+        <i class="icon icon-shield"></i>
+      </div>
+    </li>
+    
+    <li class="icon-box">
+      <input class="icon-class-name autoselect" type="text" value=".icon-spam" readonly>
+      <input class="icon-unicode autoselect" type="text" value="\EA16" readonly>
+      <div class="icon-container">
+        <i class="icon icon-spam"></i>
+      </div>
+    </li>
+    
+    <li class="icon-box">
+      <input class="icon-class-name autoselect" type="text" value=".icon-spy-1" readonly>
+      <input class="icon-unicode autoselect" type="text" value="\EA17" readonly>
+      <div class="icon-container">
+        <i class="icon icon-spy-1"></i>
+      </div>
+    </li>
+    
+    <li class="icon-box">
+      <input class="icon-class-name autoselect" type="text" value=".icon-spy-alarm-on-laptop" readonly>
+      <input class="icon-unicode autoselect" type="text" value="\EA18" readonly>
+      <div class="icon-container">
+        <i class="icon icon-spy-alarm-on-laptop"></i>
+      </div>
+    </li>
+    
+    <li class="icon-box">
+      <input class="icon-class-name autoselect" type="text" value=".icon-spy" readonly>
+      <input class="icon-unicode autoselect" type="text" value="\EA19" readonly>
+      <div class="icon-container">
+        <i class="icon icon-spy"></i>
+      </div>
+    </li>
+    
+    <li class="icon-box">
+      <input class="icon-class-name autoselect" type="text" value=".icon-strongbox" readonly>
+      <input class="icon-unicode autoselect" type="text" value="\EA1A" readonly>
+      <div class="icon-container">
+        <i class="icon icon-strongbox"></i>
+      </div>
+    </li>
+    
+    <li class="icon-box">
+      <input class="icon-class-name autoselect" type="text" value=".icon-trojan" readonly>
+      <input class="icon-unicode autoselect" type="text" value="\EA1B" readonly>
+      <div class="icon-container">
+        <i class="icon icon-trojan"></i>
+      </div>
+    </li>
+    
+    <li class="icon-box">
+      <input class="icon-class-name autoselect" type="text" value=".icon-virus" readonly>
+      <input class="icon-unicode autoselect" type="text" value="\EA1C" readonly>
+      <div class="icon-container">
+        <i class="icon icon-virus"></i>
+      </div>
+    </li>
+    
+    <li class="icon-box">
+      <input class="icon-class-name autoselect" type="text" value=".icon-wall" readonly>
+      <input class="icon-unicode autoselect" type="text" value="\EA1D" readonly>
+      <div class="icon-container">
+        <i class="icon icon-wall"></i>
+      </div>
+    </li>
+    
+    <li class="icon-box">
+      <input class="icon-class-name autoselect" type="text" value=".icon-warning" readonly>
+      <input class="icon-unicode autoselect" type="text" value="\EA1E" readonly>
+      <div class="icon-container">
+        <i class="icon icon-warning"></i>
+      </div>
+    </li>
+    
+  </ul>
+
+  <script>
+    var change = document.getElementById('change-size');
+    var changevalue = document.getElementById('change-value');
+    var count = document.getElementById('count');
+    var autoselect = document.getElementsByClassName('autoselect');
+    var icons = document.getElementsByClassName('icon');
+    Array.prototype.forEach.call(autoselect, function(el) {
+      el.onclick = function() {
+        this.focus();
+        this.select();
+      };
+    });
+    change.onchange = function() {
+      val = this.value;
+      changevalue.innerHTML = val;
+      Array.prototype.forEach.call(icons, function(el) {
+        el.style.fontSize = val + 'px';
+      });
+    }
+
+    count.innerHTML = icons.length;
+  </script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+$icons: (0:0)
+$icons: map-merge($icons,(collapse: (X: 0px, Y:-92px, W: 30px, H: 30px, TW: 153px, TH: 122px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(doc: (X: 0px, Y:0px, W: 45px, H: 52px, TW: 153px, TH: 122px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(fb: (X: 0px, Y:-56px, W: 34px, H: 32px, TW: 153px, TH: 122px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(jpg: (X: -49px, Y:0px, W: 45px, H: 49px, TW: 153px, TH: 122px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(mail: (X: -101px, Y:-92px, W: 26px, H: 18px, TW: 153px, TH: 122px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(ok: (X: -98px, Y:0px, W: 34px, H: 32px, TW: 153px, TH: 122px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(search-icon: (X: -73px, Y:-92px, W: 24px, H: 22px, TW: 153px, TH: 122px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(tel: (X: -76px, Y:-56px, W: 17px, H: 29px, TW: 153px, TH: 122px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(tw: (X: -98px, Y:-36px, W: 34px, H: 32px, TW: 153px, TH: 122px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(upload: (X: -34px, Y:-92px, W: 35px, H: 24px, TW: 153px, TH: 122px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(vk: (X: -38px, Y:-56px, W: 34px, H: 32px, TW: 153px, TH: 122px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(zoom: (X: -136px, Y:0px, W: 17px, H: 17px, TW: 153px, TH: 122px, IMG: '../img/icons.png')))
+
+
+// Gets an attribute from the sass map
+@function icon-attr($icon, $attr)
+	$icon: map-get($icons, $icon)
+	@return map-get($icon, $attr)
+
+@mixin sprite($iconName)
+	background-image: url(icon-attr($iconName, IMG))
+	width: icon-attr($iconName, W)
+	height: icon-attr($iconName, H)
+	background-position: icon-attr($iconName, X) icon-attr($iconName, Y)
+@mixin sprite-position($iconName)
+	background-position: icon-attr($iconName, X) icon-attr($iconName, Y)
+@mixin sprite-retina($iconName)
+	background-image: url(icon-attr($iconName, IMG))
+	$width: icon-attr($iconName, W)
+	$height: icon-attr($iconName, H)
+	width: $width/2
+	height: $height/2
+	$x: icon-attr($iconName, X)
+	$y: icon-attr($iconName, Y)
+	background-position: $x/2 $y/2
+	$tw: icon-attr($iconName, TW) 	
+	$th: icon-attr($iconName, TH)
+	background-size: $tw/2 $th/2  	
+
+
+@mixin s($i)
+	+sprite($i)
+@mixin sp($i)
+	+sprite-position($i)
+@mixin sr($i)
+	+sprite-retina($i)	
+
+//
+//.icon-collapse
+//	width: 30px
+//	height: 30px
+//	background-image: url('../img/icons.png')
+//	background-position: 0px -92px
+//
+//.icon-doc
+//	width: 45px
+//	height: 52px
+//	background-image: url('../img/icons.png')
+//	background-position: 0px 0px
+//
+//.icon-fb
+//	width: 34px
+//	height: 32px
+//	background-image: url('../img/icons.png')
+//	background-position: 0px -56px
+//
+//.icon-jpg
+//	width: 45px
+//	height: 49px
+//	background-image: url('../img/icons.png')
+//	background-position: -49px 0px
+//
+//.icon-mail
+//	width: 26px
+//	height: 18px
+//	background-image: url('../img/icons.png')
+//	background-position: -101px -92px
+//
+//.icon-ok
+//	width: 34px
+//	height: 32px
+//	background-image: url('../img/icons.png')
+//	background-position: -98px 0px
+//
+//.icon-search-icon
+//	width: 24px
+//	height: 22px
+//	background-image: url('../img/icons.png')
+//	background-position: -73px -92px
+//
+//.icon-tel
+//	width: 17px
+//	height: 29px
+//	background-image: url('../img/icons.png')
+//	background-position: -76px -56px
+//
+//.icon-tw
+//	width: 34px
+//	height: 32px
+//	background-image: url('../img/icons.png')
+//	background-position: -98px -36px
+//
+//.icon-upload
+//	width: 35px
+//	height: 24px
+//	background-image: url('../img/icons.png')
+//	background-position: -34px -92px
+//
+//.icon-vk
+//	width: 34px
+//	height: 32px
+//	background-image: url('../img/icons.png')
+//	background-position: -38px -56px
+//
+//.icon-zoom
+//	width: 17px
+//	height: 17px
+//	background-image: url('../img/icons.png')
+//	background-position: -136px 0px
+//

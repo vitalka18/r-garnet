@@ -1,0 +1,522 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Р-Гарнет</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="theme-color" content="#fff">
+  <link rel="stylesheet" media="all" href="css/style.css" >
+  
+</head>
+<body>
+<!-- BEGIN  out-->
+<div class="out">
+  <header id="header" class="header">
+    <div class="container header__top-container">
+      <div class="row">
+  
+        <div class="col-md-3 col-sm-3 brand">
+          <a href="#" class="logo"><img src="./img/logo.png" alt="Гарнет Лого"></a>
+        </div>
+  
+        <div class=" col-md-9 col-sm-9">
+          <div class="header__top">
+            <div class="header__contact">
+              <a href="tel:78127031264" class="header__phone"><span class="icon-tel"></span>+7 (812) 703-12-64</a>
+              <a href="mailto:info@r-garnet.ru" class="header__email"><span class="icon-mail"></span>info@r-garnet.ru</a>
+            </div>
+            <div class="header__calback"><button class="btn btn-primary" data-toggle="modal" data-target="#callback">Заказать обратный звонок</button></div>
+          </div>
+  
+          <div class="header__bottom">
+            <form class="header__search">
+              <input type="search" class="form-control form-control__search form-control_shadow" placeholder="Поиск">
+            </form>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  
+    <nav class="main-nav">
+      <div class="container">
+        <ul class="nav">
+          <li class="nav__item"><a href="#" class="nav__link">О компании</a></li>
+          <li class="nav__item"><a href="#" class="nav__link">Каталог</a></li>
+          <li class="nav__item"><a href="#" class="nav__link">Сертификаты</a></li>
+          <li class="nav__item"><a href="#" class="nav__link">Вопрос - ответ</a></li>
+          <li class="nav__item"><a href="#" class="nav__link">Статьи</a></li>
+          <li class="nav__item"><a href="#" class="nav__link">Контакты</a></li>
+        </ul>
+      </div>
+    </nav>
+  
+  </header>
+  
+
+  <main class="main main_contact">
+    <div id="mapContact" class="map contact-map">
+      
+    </div>
+    
+    <div class="container">
+      
+      <div class="row">
+        <div class="col-md-4 col-sm-4">
+          <form class="form-contact">
+            <h2>Обратная связь:</h2>
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Представьтесь, пожалуйста">
+            </div>
+            <div class="form-group">
+              <input type="email" class="form-control" placeholder="Электронная почта">
+            </div>
+            <div class="form-group">
+              <input type="tel" class="form-control" placeholder="Телефон">
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Компания">
+            </div>
+            <div class="form-group">
+              <textarea cols="30" rows="6" class="form-control" placeholder="Комментарии"></textarea>
+            </div>
+            <div class="form-group">
+              <div class="capcha">
+                <div class="capcha__img">
+                  <img src="img/capcha.png" alt="">
+                </div>
+
+                <div class="capcha__field">
+                  <input type="text" class="form-control">
+                </div>
+              </div>
+            </div>
+            <div class="form-action text-right">
+              <button class="btn btn-block btn-primary">Отправить</button>
+            </div>
+          </form>
+        </div>
+
+        <div class="col-md-8 col-sm-8">
+          <h1>Контакты</h1>
+          <div class="panel-group panel-group_contact" id="contactList" role="tablist" aria-multiselectable="true">
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab" id="panelContact-1">
+                <h4 class="panel-title">
+                  <a role="button" data-toggle="collapse" href="#contact-1" aria-expanded="true" aria-controls="contact-1">
+                    Центральный офис-склад: <span class="collapse-icon"></span>
+                  </a>
+                </h4>
+              </div>
+              <div id="contact-1" class="panel-collapse collapse in" role="tabpanel">
+                <div class="panel-body">
+                  <dl class="row">
+                    <dt class="col-md-5">Адрес:</dt>
+                    <dd class="col-md-7">г. Санкт-Петербург, пер. Челиева, д. 13, лит. Т, к. 3.</dd>
+                  </dl>
+                  <dl class="row">
+                    <dt class="col-md-5">Время работы:</dt>
+                    <dd class="col-md-7">123456</dd>
+                  </dl>
+                  <dl class="row">
+                    <dt class="col-md-5">Электронная почта:</dt>
+                    <dd class="col-md-7">info@r-garnet.ru</dd>
+                  </dl>
+                  <dl class="row">
+                    <dt class="col-md-5">Телефон:</dt>
+                    <dd class="col-md-7">+7 (812) 703 12 64</dd>
+                  </dl>
+                  <dl class="row">
+                    <dt class="col-md-5">Факс:</dt>
+                    <dd class="col-md-7">+7 (812) 703 12 64</dd>
+                  </dl>
+                  <a href="#" class="drive-schecma">Схема проезда</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab" id="panelContact-2">
+                <h4 class="panel-title">
+                  <a role="button" data-toggle="collapse" class="collapsed" href="#contact-2" aria-expanded="true" aria-controls="contact-2">
+                    Офис, Москва <span class="collapse-icon"></span>
+                  </a>
+                </h4>
+              </div>
+              <div id="contact-2" class="panel-collapse collapse " role="tabpanel">
+                <div class="panel-body">
+                  <dl class="row">
+                    <dt class="col-md-5">Адрес:</dt>
+                    <dd class="col-md-7">г. Санкт-Петербург, пер. Челиева, д. 13, лит. Т, к. 3.</dd>
+                  </dl>
+                  <a href="#" class="drive-schecma">Схема проезда</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab" id="panelContact-3">
+                <h4 class="panel-title">
+                  <a role="button" data-toggle="collapse" class="collapsed" href="#contact-3" aria-expanded="true" aria-controls="contact-3">
+                    Офис, Екатеринбург <span class="collapse-icon"></span>
+                  </a>
+                </h4>
+              </div>
+              <div id="contact-3" class="panel-collapse collapse " role="tabpanel">
+                <div class="panel-body">
+                  <dl class="row">
+                    <dt class="col-md-5">Адрес:</dt>
+                    <dd class="col-md-7">г. Санкт-Петербург, пер. Челиева, д. 13, лит. Т, к. 3.</dd>
+                  </dl>
+                  <a href="#" class="drive-schecma">Схема проезда</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab" id="panelContact-4">
+                <h4 class="panel-title">
+                  <a role="button" data-toggle="collapse" class="collapsed" href="#contact-4" aria-expanded="true" aria-controls="contact-4">
+                    Склад, Екатеринбург <span class="collapse-icon"></span>
+                  </a>
+                </h4>
+              </div>
+              <div id="contact-4" class="panel-collapse collapse " role="tabpanel">
+                <div class="panel-body">
+                  <dl class="row">
+                    <dt class="col-md-5">Адрес:</dt>
+                    <dd class="col-md-7">г. Санкт-Петербург, пер. Челиева, д. 13, лит. Т, к. 3.</dd>
+                  </dl>
+                  <a href="#" class="drive-schecma">Схема проезда</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab" id="panelContact-5">
+                <h4 class="panel-title">
+                  <a role="button" data-toggle="collapse" class="collapsed" href="#contact-5" aria-expanded="true" aria-controls="contact-5">
+                    Склад, Москва <span class="collapse-icon"></span>
+                  </a>
+                </h4>
+              </div>
+              <div id="contact-5" class="panel-collapse collapse " role="tabpanel">
+                <div class="panel-body">
+                  <dl class="row">
+                    <dt class="col-md-5">Адрес:</dt>
+                    <dd class="col-md-7">г. Санкт-Петербург, пер. Челиева, д. 13, лит. Т, к. 3.</dd>
+                  </dl>
+                  <a href="#" class="drive-schecma">Схема проезда</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab" id="panelContact-6">
+                <h4 class="panel-title">
+                  <a role="button" data-toggle="collapse" class="collapsed" href="#contact-6" aria-expanded="true" aria-controls="contact-6">
+                    Склад, Новосибирск <span class="collapse-icon"></span>
+                  </a>
+                </h4>
+              </div>
+              <div id="contact-6" class="panel-collapse collapse " role="tabpanel">
+                <div class="panel-body">
+                  <dl class="row">
+                    <dt class="col-md-5">Адрес:</dt>
+                    <dd class="col-md-7">г. Санкт-Петербург, пер. Челиева, д. 13, лит. Т, к. 3.</dd>
+                  </dl>
+                  <a href="#" class="drive-schecma">Схема проезда</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab" id="panelContact-7">
+                <h4 class="panel-title">
+                  <a role="button" data-toggle="collapse" class="collapsed" href="#contact-7" aria-expanded="true" aria-controls="contact-7">
+                    Склад, Нижний Новгород <span class="collapse-icon"></span>
+                  </a>
+                </h4>
+              </div>
+              <div id="contact-7" class="panel-collapse collapse " role="tabpanel">
+                <div class="panel-body">
+                  <dl class="row">
+                    <dt class="col-md-5">Адрес:</dt>
+                    <dd class="col-md-7">г. Санкт-Петербург, пер. Челиева, д. 13, лит. Т, к. 3.</dd>
+                  </dl>
+                  <a href="#" class="drive-schecma">Схема проезда</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab" id="panelContact-8">
+                <h4 class="panel-title">
+                  <a role="button" data-toggle="collapse" class="collapsed" href="#contact-8" aria-expanded="true" aria-controls="contact-8">
+                    Склад, Рига <span class="collapse-icon"></span>
+                  </a>
+                </h4>
+              </div>
+              <div id="contact-8" class="panel-collapse collapse " role="tabpanel">
+                <div class="panel-body">
+                  <dl class="row">
+                    <dt class="col-md-5">Адрес:</dt>
+                    <dd class="col-md-7">г. Санкт-Петербург, пер. Челиева, д. 13, лит. Т, к. 3.</dd>
+                  </dl>
+                  <a href="#" class="drive-schecma">Схема проезда</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab" id="panelContact-10">
+                <h4 class="panel-title">
+                  <a role="button" data-toggle="collapse" class="collapsed" href="#contact-10" aria-expanded="true" aria-controls="contact-10">
+                    Склад, Ростов-на-Дону <span class="collapse-icon"></span>
+                  </a>
+                </h4>
+              </div>
+              <div id="contact-10" class="panel-collapse collapse " role="tabpanel">
+                <div class="panel-body">
+                  <dl class="row">
+                    <dt class="col-md-5">Адрес:</dt>
+                    <dd class="col-md-7">г. Санкт-Петербург, пер. Челиева, д. 13, лит. Т, к. 3.</dd>
+                  </dl>
+                  <a href="#" class="drive-schecma">Схема проезда</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab" id="panelContact-11">
+                <h4 class="panel-title">
+                  <a role="button" data-toggle="collapse" class="collapsed" href="#contact-11" aria-expanded="true" aria-controls="contact-11">
+                    Склад, Самара <span class="collapse-icon"></span>
+                  </a>
+                </h4>
+              </div>
+              <div id="contact-11" class="panel-collapse collapse " role="tabpanel">
+                <div class="panel-body">
+                  <dl class="row">
+                    <dt class="col-md-5">Адрес:</dt>
+                    <dd class="col-md-7">г. Санкт-Петербург, пер. Челиева, д. 13, лит. Т, к. 3.</dd>
+                  </dl>
+                  <a href="#" class="drive-schecma">Схема проезда</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab" id="panelContact-12">
+                <h4 class="panel-title">
+                  <a role="button" data-toggle="collapse" class="collapsed" href="#contact-12" aria-expanded="true" aria-controls="contact-12">
+                    Склад, Санкт-Петербург <span class="collapse-icon"></span>
+                  </a>
+                </h4>
+              </div>
+              <div id="contact-12" class="panel-collapse collapse " role="tabpanel">
+                <div class="panel-body">
+                  <dl class="row">
+                    <dt class="col-md-5">Адрес:</dt>
+                    <dd class="col-md-7">г. Санкт-Петербург, пер. Челиева, д. 13, лит. Т, к. 3.</dd>
+                  </dl>
+                  <a href="#" class="drive-schecma">Схема проезда</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab" id="panelContact-13">
+                <h4 class="panel-title">
+                  <a role="button" data-toggle="collapse" class="collapsed" href="#contact-13" aria-expanded="true" aria-controls="contact-13">
+                    Склад, Челябинск <span class="collapse-icon"></span>
+                  </a>
+                </h4>
+              </div>
+              <div id="contact-13" class="panel-collapse collapse " role="tabpanel">
+                <div class="panel-body">
+                  <dl class="row">
+                    <dt class="col-md-5">Адрес:</dt>
+                    <dd class="col-md-7">г. Санкт-Петербург, пер. Челиева, д. 13, лит. Т, к. 3.</dd>
+                  </dl>
+                  <a href="#" class="drive-schecma">Схема проезда</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab" id="panelContact-14">
+                <h4 class="panel-title">
+                  <a role="button" data-toggle="collapse" class="collapsed" href="#contact-14" aria-expanded="true" aria-controls="contact-14">
+                    Склад, Пермь <span class="collapse-icon"></span>
+                  </a>
+                </h4>
+              </div>
+              <div id="contact-14" class="panel-collapse collapse " role="tabpanel">
+                <div class="panel-body">
+                  <dl class="row">
+                    <dt class="col-md-5">Адрес:</dt>
+                    <dd class="col-md-7">г. Санкт-Петербург, пер. Челиева, д. 13, лит. Т, к. 3.</dd>
+                  </dl>
+                  <a href="#" class="drive-schecma">Схема проезда</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  
+  <footer class="footer">
+  
+    <div class="footer_top container">
+  
+      <div class="row">
+  
+        <div class="col-sm-2">
+  
+          <a href="#" class="footer__logo"><img src="img/logo-footer.png" alt=""></a>
+  
+        </div>
+  
+        <div class="col-sm-10">
+  
+          <div class="footer__nav hidden-xs">
+  
+            <ul class="nav">
+  
+              <li class="nav__item"><a href="#" class="nav__link">О компании</a></li>
+  
+              <li class="nav__item"><a href="#" class="nav__link">Каталог</a></li>
+  
+              <li class="nav__item"><a href="#" class="nav__link">Сертификаты</a></li>
+  
+              <li class="nav__item"><a href="#" class="nav__link">Вопрос - ответ</a></li>
+  
+              <li class="nav__item"><a href="#" class="nav__link">Статьи</a></li>
+  
+              <li class="nav__item"><a href="#" class="nav__link">Контакты</a></li>
+  
+            </ul>
+  
+          </div>
+  
+  
+  
+          <div class="footer__bottom">
+  
+            <div class="footer__contact">
+  
+              <a href="tel:78127031264" class="footer__phone"><span class="icon-tel"></span>+7 (812) 703-12-64</a>
+  
+              <a href="mailto:info@r-garnet.ru" class="footer__email"><span class="icon-mail"></span>info@r-garnet.ru</a>
+  
+            </div>
+  
+  
+  
+            <div class="footer__social">
+  
+              <a href="#" class="social-link social-link_fb"></a>
+  
+              <a href="#" class="social-link social-link_vk"></a>
+  
+              <a href="#" class="social-link social-link_ok"></a>
+  
+              <a href="#" class="social-link social-link_tw"></a>
+  
+            </div>
+  
+          </div>
+  
+        </div>
+  
+      </div>
+  
+    </div>
+  
+    <div class="footer__copyright"><p>Все права защищены ЗАО "Р-Гарнет</p></div>
+  
+  </footer>
+  
+  
+  
+  <div class="modal fade" id="callback" tabindex="-1" role="dialog">
+  
+    <div class="modal-dialog" role="document">
+  
+      <div class="modal-content">
+  
+        <div class="modal-header has-logo">
+  
+          <div class="modal-logo"><img src="img/logo-footer.png" alt=""></div>
+  
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  
+          <h4 class="modal-title">Обратный звонок:</h4>
+  
+        </div>
+  
+        <div class="modal-body">
+  
+          <form class="form-modal">
+  
+            <div class="form-group">
+  
+              <input type="text" class="form-control" placeholder="Ваше имя">
+  
+            </div>
+  
+  
+  
+            <div class="form-group">
+  
+              <input type="text" class="form-control" placeholder="Ваш номер телефона">
+  
+            </div>
+  
+  
+  
+            <div class="form-action">
+  
+              <button type="submit" class="btn btn-primary btn-block">Перезвонить мне</button>
+  
+            </div>
+  
+          </form>
+  
+        </div>
+  
+      </div><!-- /.modal-content -->
+  
+    </div><!-- /.modal-dialog -->
+  
+  </div><!-- /.modal -->
+  
+  
+  
+  <div class="modal fade" id="lightboxModal" tabindex="-1" role="dialog">
+  
+    <div class="modal-dialog modal-lg modal_img" role="document">
+  
+      <div class="modal-content">
+  
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  
+        <img src="/" alt="Сертификаты">
+  
+      </div><!-- /.modal-content -->
+  
+    </div><!-- /.modal-dialog -->
+  
+  </div><!-- /.modal -->
+  
+  
+</div>
+<!-- END out-->
+<script src="//api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
