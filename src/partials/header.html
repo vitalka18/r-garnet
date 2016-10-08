@@ -12,7 +12,16 @@
             <a href="tel:78127031264" class="header__phone"><span class="icon-tel"></span>+7 (812) 703-12-64</a>
             <a href="mailto:info@r-garnet.ru" class="header__email"><span class="icon-mail"></span>info@r-garnet.ru</a>
           </div>
-          <div class="header__calback"><button class="btn btn-primary" data-toggle="modal" data-target="#callback">Заказать обратный звонок</button></div>
+
+          <div class="header__calback">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mainNavigation" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <button class="btn btn-primary" data-toggle="modal" data-target="#callback">Заказать обратный звонок</button>
+          </div>
         </div>
 
         <div class="header__bottom">
@@ -25,7 +34,7 @@
     </div>
   </div>
 
-  <nav class="main-nav">
+  <nav class="main-nav collapse navbar-collapse" id="mainNavigation"
     <div class="container">
       <ul class="nav">
         <li class="nav__item"><a href="#" class="nav__link">О компании</a></li>

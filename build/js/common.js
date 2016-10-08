@@ -1,21 +1,59 @@
 $(document).ready(function() {
   mainSlider();
+  
+  if ( $(window).width() > 480) {
+    setEqualHeight($('.goods-view, .goods-view__photo'));
+  }
+
+  $(window).resize(function() {
+    if ( $(window).width() > 480) {
+      $('.goods-view, .goods-view__photo').css({'height': 'auto'});
+      setEqualHeight($('.goods-view, .goods-view__photo'));
+    } else {
+      $('.goods-view, .goods-view__photo').css({'height': 'auto'});
+    }
+  });
+
 
   $('#top-go').click(function(e) {
     e.preventDefault();
     $('body,html').animate({scrollTop:0},800);
   });
 
-  setEqualHeight($('.goods-view, .goods-view__photo'));
 
-  $('.js-main-promo').hover(function() {
-    var $promo = $(this).parent('.main-promo');
-    $promo.css({'background-image': 'url(' + $(this).attr('data-img') + ')'})
-  }, function() {
-    debugger
-    var $promo = $(this).parent('.main-promo');
-    var $centerPromo = $promo.find('.main-promo__center');
-    $promo.css({'background-image': 'url(' + $centerPromo.attr('data-img') + ')'})
+  $('.js-main-promo').hover(
+    function() {
+      var $promo = $(this).parent('.main-promo');
+      var $centerPromo = $promo.find('.main-promo__center');
+      $centerPromo.addClass('grayscale');
+      $( $(this).attr('data-id') ).css('opacity', '1');
+    }, 
+
+    function() {
+      var $promo = $(this).parent('.main-promo');
+      var $centerPromo = $promo.find('.main-promo__center');
+
+      $centerPromo.removeClass('grayscale');
+      $( $(this).attr('data-id') ).css('opacity', '0');
+    }
+  );
+
+
+  $('#lightboxModal').on('show.bs.modal', function (e) {
+    var $link = $(e.relatedTarget);
+    var $modal = $(e.target);
+    var $img = $modal.find('img');
+    $img.attr({src: $link.attr('data-img')});
+  });
+
+
+  $('#schemaMap').on('shown.bs.modal', function (e) {
+    var $link = $(e.relatedTarget);
+    var mapLat = $link.attr('data-lat') *1 ,
+        mapLang = $link.attr('data-lang') *1 ;
+
+    window.modalMap.setCenter([mapLat, mapLang]);
+    window.myModalPlacemark.geometry.setCoordinates([mapLat, mapLang]);
   });
 });
 
@@ -37,6 +75,27 @@ ymaps.ready(function () {
     myMap.geoObjects.add(myPlacemark);
     myMap.behaviors.disable('scrollZoom');
   }
+
+
+  if ( $('#mapModal').length ) {
+    ymaps.ready(function () {
+      window.modalMap = new ymaps.Map('mapModal', {
+        center: [59.889708, 30.478156],
+        zoom: 14    
+      });
+
+      window.myModalPlacemark = new ymaps.Placemark(modalMap.getCenter(), {}, {
+        iconLayout: 'default#image',
+        iconImageHref: 'img/map-2.png',
+        iconImageSize: [44, 40],
+        iconImageOffset: [-22, -22]
+      });
+
+      modalMap.geoObjects.add(myModalPlacemark);
+      modalMap.behaviors.disable('scrollZoom');
+    });
+  }
+
   
   if ( $('#mapContact').length ) {
     var myContactMap = new ymaps.Map('mapContact', {
@@ -69,12 +128,7 @@ ymaps.ready(function () {
     });
   }
 
-  $('#lightboxModal').on('show.bs.modal', function (e) {
-    var $link = $(e.relatedTarget);
-    var $modal = $(e.target);
-    var $img = $modal.find('img');
-    $img.attr({src: $link.attr('data-img')});
-  });
+
 });
 
 
