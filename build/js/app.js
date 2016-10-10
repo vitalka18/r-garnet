@@ -59,14 +59,14 @@ $(document).ready(function() {
 
   $('.js-main-promo').hover(
     function() {
-      var $promo = $(this).parent('.main-promo');
+      var $promo = $(this).parents('.main-promo');
       var $centerPromo = $promo.find('.main-promo__center');
       $centerPromo.addClass('grayscale');
       $( $(this).attr('data-id') ).css('opacity', '1');
     }, 
 
     function() {
-      var $promo = $(this).parent('.main-promo');
+      var $promo = $(this).parents('.main-promo');
       var $centerPromo = $promo.find('.main-promo__center');
 
       $centerPromo.removeClass('grayscale');

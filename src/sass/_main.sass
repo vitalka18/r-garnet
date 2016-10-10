@@ -297,6 +297,16 @@
   color: #fff
   font-weight: 700
 
+.main-promo__inner
+  position: absolute
+  height: 100%
+  max-width: 1140px
+  top: 0
+  bottom: 0
+  left: 0
+  right: 0
+  margin: auto
+
 .main-promo__title
   margin: 62px 0 0
   font-weight: 700
@@ -320,6 +330,7 @@
   margin-top: 15px
   text-align: center
   text-transform: uppercase
+  text-shadow: -1px 2px 3px rgba(0, 0, 0, 0.7)
 
 .main-promo__left,
 .main-promo__right
@@ -327,7 +338,8 @@
   top: 250px
   width: 230px
   cursor: pointer
-  transition: transform .5s, opacity .5s
+  img
+    transition: transform .5s, opacity .5s
   .main-promo__img-base
     width: 100%
   .main-promo__img-hover
@@ -338,9 +350,11 @@
     width: 100%
     height: auto
     z-index: 5
-    transition: transform .3s, opacity .3s
+    img
+      transition: transform .3s, opacity .3s
   &:hover
-    transform: perspective(0) rotateY( 0deg )
+    img 
+      transform: perspective(0) rotateY( 0deg )
     .main-promo__img-hover
       opacity: 1
 
@@ -366,12 +380,14 @@
   transition: filter .3s
 
 .main-promo__left
-  left: 80px
-  transform: perspective( 400px ) rotateY( 15deg )
+  left: 25px
+  img
+    transform: perspective( 400px ) rotateY( 15deg )
 
 .main-promo__right
-  right: 80px
-  transform: perspective( 400px ) rotateY( -15deg )
+  right: 25px
+  img
+    transform: perspective( 400px ) rotateY( -15deg )
 
 .l-section
   padding: 80px 90px 70px
@@ -924,10 +940,14 @@
   .main-promo__left,
   .main-promo__right,
   .main-promo__center
-    position: static
+    position: relative
+    left: 0
+    top: 0
+    right: 0
     max-width: 90%
     margin: 30px auto
-    transform: perspective(0) rotateY(0deg)
+    img
+      transform: perspective(0) rotateY(0deg)
 
   .main-promo__title
     margin-top: 30px
@@ -935,7 +955,9 @@
 
   .main-promo
     height: auto
-
+  .main-promo__inner
+    position: relative
+    z-index: 500
   .logo
     text-align: center
 
@@ -1116,10 +1138,10 @@
   .goods-view__photo
     float: none
     width: 100%
+    text-align: center
 
   .goods-view__img
-    width: 100%
-    border-radius: 5px 5px 0 0 
+    border-radius: 5px 
 
   .goods-view__content
     margin-left: 0
