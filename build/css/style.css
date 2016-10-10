@@ -1453,28 +1453,6 @@ html { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: 
 
 .icon-zoom { width: 17px; height: 17px; background-image: url("../img/icons.png"); background-position: -136px 0px; }
 
-.icon-collapse { width: 30px; height: 30px; background-image: url("../img/icons.png"); background-position: 0px -92px; }
-
-.icon-doc { width: 45px; height: 52px; background-image: url("../img/icons.png"); background-position: 0px 0px; }
-
-.icon-fb { width: 34px; height: 32px; background-image: url("../img/icons.png"); background-position: 0px -56px; }
-
-.icon-jpg { width: 45px; height: 49px; background-image: url("../img/icons.png"); background-position: -49px 0px; }
-
-.icon-mail { width: 26px; height: 18px; background-image: url("../img/icons.png"); background-position: -101px -92px; }
-
-.icon-ok { width: 34px; height: 32px; background-image: url("../img/icons.png"); background-position: -98px 0px; }
-
-.icon-search-icon { width: 24px; height: 22px; background-image: url("../img/icons.png"); background-position: -73px -92px; }
-
-.icon-tel { width: 17px; height: 29px; background-image: url("../img/icons.png"); background-position: -76px -56px; }
-
-.icon-tw { width: 34px; height: 32px; background-image: url("../img/icons.png"); background-position: -98px -36px; }
-
-.icon-upload { width: 35px; height: 24px; background-image: url("../img/icons.png"); background-position: -34px -92px; }
-
-.icon-vk { width: 34px; height: 32px; background-image: url("../img/icons.png"); background-position: -38px -56px; }
-
 @font-face { font-family: "svgfont"; src: url("fonts/svgfont.eot"); src: url("fonts/svgfont.eot?#iefix") format("eot"), url("fonts/svgfont.woff") format("woff"), url("fonts/svgfont.woff2") format("woff2"), url("fonts/svgfont.ttf") format("truetype"); font-weight: normal; font-style: normal; }
 .icon, [class^="icon-"], [class*=" icon-"] { font-family: "svgfont"; font-style: normal; font-weight: normal; text-rendering: auto; speak: none; line-height: 1; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
 
@@ -1685,6 +1663,7 @@ input[type="search"]::-webkit-search-decoration, input[type="search"]::-webkit-s
 .main_inner-page { padding: 30px 0 60px; }
 .main_inner-page h1 { text-transform: uppercase; font-weight: 700; font-size: 30px; color: #515151; text-align: center; margin-bottom: 40px; *zoom: 1; }
 .main_inner-page h1:after { content: " "; display: table; clear: both; }
+.main_inner-page h1 .inner-title { display: block; margin-left: 235px; }
 .main_inner-page h2 { color: #515151; text-align: center; font-size: 24px; margin-top: 80px; margin-bottom: 40px; text-transform: uppercase; }
 .main_inner-page h2:first-child { margin-top: 0px; }
 
@@ -2297,7 +2276,9 @@ input[type="search"]::-webkit-search-decoration, input[type="search"]::-webkit-s
  .certificat__img{ float: none; text-align: center; display: inline-block; margin-bottom: 10px; }
  .certificat__img-show{ display: inline-block; }
  .certificat__content{ margin-left: 0; }
- .modal-dialog{ width: auto; } }
+ .modal-dialog{ width: auto; }
+ .main_inner-page h1 .inner-title{ margin-top: 15px; margin-left: 0; }
+ .come-back-link{ float: none; } }
 @media screen and (max-width: 479px){
  .goods-view__photo{ float: none; width: 100%; text-align: center; }
  .goods-view__img{ -webkit-border-radius: 5px; border-radius: 5px; }
