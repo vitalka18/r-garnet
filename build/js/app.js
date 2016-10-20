@@ -91,6 +91,17 @@ $(document).ready(function() {
     window.modalMap.setCenter([mapLat, mapLang]);
     window.myModalPlacemark.geometry.setCoordinates([mapLat, mapLang]);
   });
+
+  $('.cart-spinner__btn_prev').on('click', function(e) {
+    e.preventDefault();
+    var $spinner = $(this).closest('.cart-spinner');
+    $spinner.find('.cart-spinner__field').val( parseInt($spinner.find('.cart-spinner__field').val(), 10) - 1);
+  });
+  $('.cart-spinner__btn_next').on('click', function(e) {
+    e.preventDefault();
+    var $spinner = $(this).closest('.cart-spinner');
+    $spinner.find('.cart-spinner__field').val( parseInt($spinner.find('.cart-spinner__field').val(), 10) + 1);
+  });
 });
 
 ymaps.ready(function () {

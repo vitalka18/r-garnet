@@ -51,6 +51,8 @@
   margin: 17px 0 0 0
 
 .main-nav
+  padding-left: 0
+  padding-right: 0
   background: #efefef
   box-shadow: 0 2px 3px 0 rgba(0, 0, 0, .16 ) inset
 
@@ -331,6 +333,7 @@
 
 .main-promo__caption
   margin-top: 15px
+  font-size: 24px
   text-align: center
   text-transform: uppercase
   text-shadow: -1px 2px 3px rgba(0, 0, 0, 0.7)
@@ -357,7 +360,7 @@
       transition: transform .3s, opacity .3s
   &:hover
     img 
-      transform: perspective(0) rotateY( 0deg )
+      transform: perspective(400px) rotateY( 0deg )
     .main-promo__img-hover
       opacity: 1
 
@@ -903,6 +906,94 @@
   .icon-bar
     background: #fff
 
+.basket-table
+  margin: 30px auto 40px
+
+.basket-table__row
+  td
+    padding: 10px 15px
+    vertical-align: middle
+
+.basket-table__img
+  img
+    width: 130px
+    height: auto
+    border: 2px solid #3f64ae
+    border-radius: 3px
+
+.basket-table__row
+  .basket-table__img
+    width: 150px
+    padding-left: 0
+
+.basket-table__name
+  a
+    color: #515151
+    font-size: 16px
+    text-transform: uppercase
+    font-weight: bold
+    &:hover
+      text-decoration: none
+
+.cart-spinner
+  overflow: hidden
+  width: 112px
+  border: 1px solid #3f64ae
+  border-radius: 4px
+
+.cart-spinner__btn
+  float: left
+  width: 30px
+  height: 34px
+  font-size: 25px
+  font-weight: bold
+  text-align: center
+  line-height: 1
+  padding: 2px 0 7px
+  background: #3f64ae
+  color: #fff
+
+.cart-spinner__field
+  float: left
+  height: 34px
+  width: 50px
+  padding: 0 2px
+  font-size: 20px
+  color: #515151
+  text-align: center
+
+.bascket-fixed
+  z-index: 20
+  position: fixed
+  right: 20px
+  bottom: 20px
+  width: 60px
+  height: 60px
+  padding: 10px 16px 20px 20px
+  border-radius: 5px
+  color: #f9716a
+  text-decoration: none
+  background: #3f64ae url(../img/cart-icon.png) center 60% no-repeat
+  &:hover, &:active, &:focus
+    text-decoration: none
+    color: #f9716a
+
+
+
+.bascket-fixed__count
+  overflow: hidden
+  text-align: center
+  white-space: nowrap
+  font-size: 18px
+  color: #f9716a
+
+.main_cart-page
+  .special-propose__form
+    padding-bottom: 20px
+
+  textarea.form-control
+    height: 171px
+
 @media screen and (min-width: 768px)
   .modal-dialog
     width: 440px
@@ -997,6 +1088,7 @@
 
   .footer
     padding-bottom: 25px
+  
 
 @media screen and (max-width: 767px)
   .header__calback
@@ -1144,6 +1236,34 @@
   .come-back-link
     float: none
 
+  .basket-table
+    display: block
+    tbody, thead, tfoot
+      display: block
+  .basket-table__img
+    a
+      display: block
+  .basket-table__row
+    position: relative
+    display: block
+    padding: 15px
+    border-bottom: 1px solid rgb(63, 100, 174)
+    margin-bottom: 20px
+    td
+      display: block
+      padding: 0
+      margin: 0 auto
+      text-align: center
+
+      + td
+        margin-top: 15px
+    .cart-spinner
+      margin: 0 auto
+
+  .basket-table__delete
+    position: absolute
+    top: 5px
+    right: 5px
 
 @media screen and (max-width: 479px)
   .goods-view__photo
