@@ -82,8 +82,15 @@ $(document).ready(function() {
     var mapLat = $link.attr('data-lat') *1 ,
         mapLang = $link.attr('data-lang') *1 ;
 
-    window.modalMap.setCenter([mapLat, mapLang]);
-    window.myModalPlacemark.geometry.setCoordinates([mapLat, mapLang]);
+    google.maps.event.trigger(window.modalMap, "resize");
+    window.modalMap.setCenter({lat: mapLat, lng: mapLang});
+    window.myModalPlacemark.setOptions({
+      position: {
+        lat: mapLat, 
+        lng: mapLang
+      }
+    });
+
   });
 
   $('.cart-spinner__btn_prev').on('click', function(e) {
@@ -98,51 +105,48 @@ $(document).ready(function() {
   });
 });
 
-ymaps.ready(function () {
+function mainSlider() {
+  $('.js-main-slider').slick({
+    dots: false,
+    infinite: true,
+    speed: 500,
+    fade: true,
+    cssEase: 'linear'
+  });
+}
+
+function setEqualHeight(columns) {
+  var tallestcolumn = 0;
+  columns.each(
+  function(){
+    currentHeight = $(this).height();
+    if(currentHeight > tallestcolumn){
+      tallestcolumn = currentHeight;
+    }
+  });
+  columns.height(tallestcolumn);
+}
+
+function initMap () {
   if ( $('#map').length ) {
-    var myMap = new ymaps.Map('map', {
-      center: [59.889708, 30.478156],
-      zoom: 14,
-      controls: []
-    }),
-
-    myPlacemark = new ymaps.Placemark(myMap.getCenter(), {}, {
-      iconLayout: 'default#image',
-      iconImageHref: 'img/map.png',
-      iconImageSize: [195, 184],
-      iconImageOffset: [-90, -180]
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 13,
+      center: {lat: 59.88970, lng: 30.478156}
     });
 
-    myMap.geoObjects.add(myPlacemark);
-    myMap.behaviors.disable('scrollZoom');
-  }
-
-
-  if ( $('#mapModal').length ) {
-    ymaps.ready(function () {
-      window.modalMap = new ymaps.Map('mapModal', {
-        center: [59.889708, 30.478156],
-        zoom: 14    
-      });
-
-      window.myModalPlacemark = new ymaps.Placemark(modalMap.getCenter(), {}, {
-        iconLayout: 'default#image',
-        iconImageHref: 'img/map-2.png',
-        iconImageSize: [44, 40],
-        iconImageOffset: [-22, -22]
-      });
-
-      modalMap.geoObjects.add(myModalPlacemark);
-      modalMap.behaviors.disable('scrollZoom');
+    var image = 'img/map.png';
+    var beachMarker = new google.maps.Marker({
+      position: {lat: 59.889708, lng: 30.478156},
+      map: map,
+      size: new google.maps.Size(100, 100),
+      icon: image
     });
   }
 
-  
   if ( $('#mapContact').length ) {
-    var myContactMap = new ymaps.Map('mapContact', {
-      center: [59.889708, 30.478156],
+    var myContactMap = new google.maps.Map(document.getElementById('mapContact'), {
       zoom: 5,
-      controls: ['zoomControl', 'typeSelector']
+      center: {lat: 59.88970, lng: 30.478156}
     });
 
     var contactStore = [
@@ -157,43 +161,31 @@ ymaps.ready(function () {
     ];
 
     contactStore.forEach(function(store) {
-      var myPlacemark = new ymaps.Placemark([store.x, store.y], {}, {
-        iconLayout: 'default#image',
-        iconImageHref: 'img/map-2.png',
-        iconImageSize: [44, 40],
-        iconImageOffset: [-22, -22]
+      var image = 'img/map-2.png';
+      
+      var beachMarker = new google.maps.Marker({
+        position: {lat: store.x, lng: store.y},
+        map: myContactMap,
+        size: new google.maps.Size(44, 42),
+        icon: image
       });
-
-      myContactMap.geoObjects.add(myPlacemark);
-      myContactMap.behaviors.disable('scrollZoom');
     });
   }
 
+  if ( $('#mapModal').length ) {
+   window.modalMap = new google.maps.Map(document.getElementById('mapModal'), {
+      zoom: 14,
+      center: {lat: 59.88970, lng: 30.478156}
+    });
 
-});
+    var modalImage = 'img/map-2.png';
+      
+    window.myModalPlacemark = new google.maps.Marker({
+      position: {lat: 59.88970, lng: 30.478156},
+      map: modalMap,
+      size: new google.maps.Size(44, 42),
+      icon: modalImage
+    });
+  }
 
-
-
-
-
-function mainSlider() {
-  $('.js-main-slider').slick({
-    dots: false,
-    infinite: true,
-    speed: 500,
-    fade: true,
-    cssEase: 'linear'
-  });
-}
-
-function setEqualHeight(columns){
-  var tallestcolumn = 0;
-  columns.each(
-  function(){
-    currentHeight = $(this).height();
-    if(currentHeight > tallestcolumn){
-      tallestcolumn = currentHeight;
-    }
-  });
-  columns.height(tallestcolumn);
 }
