@@ -60,7 +60,6 @@ $(document).ready(function() {
         lng: mapLang
       }
     });
-
   });
 
   $('.cart-spinner__btn_prev').on('click', function(e) {

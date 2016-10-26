@@ -49,6 +49,25 @@
 .logo
   display: block
   margin: 17px 0 0 0
+  transition: opacity .3s
+  img 
+    max-width: 100%
+    vertical-align: bottom
+
+  &:hover,
+  &:focus,
+  &:active
+    opacity: .7
+    text-decoration: none
+    color: rgb(63, 100, 174)
+
+.logo__text
+  display: block
+  font-size: 38px
+  font-weight: bold
+  line-height: 1
+  white-space: pre
+  color: rgb(63, 100, 174)
 
 .main-nav
   padding-left: 0
@@ -610,6 +629,28 @@
   padding: 20px 0 45px
   border-top: 1px solid #c6c6c6
   background: #fff
+
+.footer__logo
+  img 
+    max-width: 100%
+    vertical-align: bottom
+
+  &:hover,
+  &:focus,
+  &:active
+    opacity: .7
+    text-decoration: none
+    color: rgb(63, 100, 174)
+
+.footer__logo-text
+  display: block
+  margin-top: 1px
+  font-size: 20px
+  font-weight: bold
+  line-height: 1
+  white-space: pre
+  color: rgb(63, 100, 174)
+
 
 .footer__nav
   padding: 5px 0
@@ -1264,7 +1305,11 @@
     position: absolute
     top: 5px
     right: 5px
-
+  .brand
+    text-align: center
+  
+  .footer__logo
+    margin-bottom: 15px
 @media screen and (max-width: 479px)
   .goods-view__photo
     float: none
