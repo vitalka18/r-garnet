@@ -72,6 +72,24 @@ $(document).ready(function() {
     var $spinner = $(this).closest('.cart-spinner');
     $spinner.find('.cart-spinner__field').val( parseInt($spinner.find('.cart-spinner__field').val(), 10) + 1);
   });
+
+  $('.js-zoom').zoom();
+
+  $('input[name="rad"]').click(function(){
+        var $radio = $(this);
+
+        // if this was previously checked
+        if ($radio.data('waschecked') == true)
+        {
+            $radio.prop('checked', false);
+            $radio.data('waschecked', false);
+        }
+        else
+            $radio.data('waschecked', true);
+
+        // remove was checked from other radios
+        $radio.siblings('input[name="rad"]').data('waschecked', false);
+    });
 });
 
 function mainSlider() {
