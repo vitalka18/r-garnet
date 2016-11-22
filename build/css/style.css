@@ -2438,7 +2438,9 @@ input[type="search"]::-webkit-search-decoration, input[type="search"]::-webkit-s
 @media screen and (max-width: 479px){
  .goods-view__photo{ float: none; width: 100%; text-align: center; }
  .goods-view__img{ -webkit-border-radius: 5px; border-radius: 5px; }
- .goods-view__content{ margin-left: 0; } }
+ .goods-view__content{ margin-left: 0; }
+ .card-action{ text-align: center; }
+ .card-action .btn{ margin-bottom: 10px; } }
 
 
 
