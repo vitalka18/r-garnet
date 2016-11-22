@@ -67,29 +67,66 @@ $(document).ready(function() {
     var $spinner = $(this).closest('.cart-spinner');
     $spinner.find('.cart-spinner__field').val( parseInt($spinner.find('.cart-spinner__field').val(), 10) - 1);
   });
+
   $('.cart-spinner__btn_next').on('click', function(e) {
     e.preventDefault();
     var $spinner = $(this).closest('.cart-spinner');
     $spinner.find('.cart-spinner__field').val( parseInt($spinner.find('.cart-spinner__field').val(), 10) + 1);
   });
 
-  $('.js-zoom').zoom();
+  $('.js-zoom').zoom({
+    magnify: 2
+  });
 
   $('input[name="rad"]').click(function(){
-        var $radio = $(this);
+      var $radio = $(this);
 
-        // if this was previously checked
-        if ($radio.data('waschecked') == true)
-        {
-            $radio.prop('checked', false);
-            $radio.data('waschecked', false);
+      // if this was previously checked
+      if ($radio.data('waschecked') == true)
+      {
+          $radio.prop('checked', false);
+          $radio.data('waschecked', false);
+      }
+      else
+          $radio.data('waschecked', true);
+
+      // remove was checked from other radios
+      $radio.siblings('input[name="rad"]').data('waschecked', false);
+  });
+
+  $('.cg-preview').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+    adaptiveHeight: true,
+    fade: true,
+    asNavFor: '.cg-pag'
+  });
+
+  $('.cg-pag').slick({
+    slidesToShow: 2,
+    arrows: false,
+    slidesToScroll: 1,
+    asNavFor: '.cg-preview',
+    dots: false,
+    centerMode: false,
+    focusOnSelect: true,
+    responsive: [
+      {
+        breakpoint: 991,
+        settings: {
+          slidesToShow: 4,
         }
-        else
-            $radio.data('waschecked', true);
+      },
 
-        // remove was checked from other radios
-        $radio.siblings('input[name="rad"]').data('waschecked', false);
-    });
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+        }
+      }
+    ]
+  });
 });
 
 function mainSlider() {

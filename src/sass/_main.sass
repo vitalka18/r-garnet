@@ -334,11 +334,12 @@
   .dl-big
     margin: 15px 0
     font-size: 24px
-    dt, dd
-      display: inline-block
-    
     dt
-      margin-right: 20px
+      float: left
+      width: 130px
+    
+    dd
+      margin-left: 150px
 
 .card-character
   margin: 15px 0 30px
@@ -1178,6 +1179,13 @@
       width: 350px
       padding-right: 40px
       text-align: left 
+    &:nth-child(2)
+      display: block
+      span
+        display: block
+        &:not(:first-child)
+          font-size: 14px
+          font-weight: 400
 
 .table-spare-part_auto-width
   td:first-child
@@ -1203,6 +1211,15 @@
   td[rowspan]
     width: 160px
     padding-top: 25px
+
+.card-gallery
+  margin-bottom: 20px
+
+.cg-pag__item
+  padding: 5px
+
+.cg-preview__item 
+  text-align: center
 
 @media screen and (min-width: 768px)
   .modal-dialog
