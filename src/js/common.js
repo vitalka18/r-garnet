@@ -14,6 +14,7 @@ $(document).ready(function() {
     }
   });
 
+  $('#cascade-slider').cascadeSlider({});
 
   $('#top-go').click(function(e) {
     e.preventDefault();

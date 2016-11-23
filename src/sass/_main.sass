@@ -413,6 +413,8 @@
 
 .main-promo__img-base
   filter: grayscale(100%)
+  &:hover
+    filter: grayscale(0%)
 
 .grayscale
   filter: grayscale(100%)
@@ -426,9 +428,7 @@
 
 .main-promo__left,
 .main-promo__right
-  position: absolute
-  top: 250px
-  width: 230px
+  position: relative
   cursor: pointer
   img
     transition: transform .5s, opacity .5s
@@ -463,23 +463,18 @@
   transition: opacity .75s
 
 .main-promo__center
-  position: absolute
-  top: 170px
-  left: 0
-  right: 0
   margin: 0 auto
-  width: 548px
   transition: filter .3s
 
 .main-promo__left
-  left: 25px
+  // left: 25px
   img
-    transform: perspective( 400px ) rotateY( 15deg )
+    // transform: perspective( 400px ) rotateY( 15deg )
 
 .main-promo__right
-  right: 25px
+  // right: 25px
   img
-    transform: perspective( 400px ) rotateY( -15deg )
+    //transform: perspective( 400px ) rotateY( -15deg )
 
 .l-section
   padding: 80px 90px 70px
