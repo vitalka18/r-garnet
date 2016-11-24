@@ -5,6 +5,8 @@ $(document).ready(function() {
     setEqualHeight($('.goods-view, .goods-view__photo'));
   }
 
+  $('#cascade-slider').cascadeSlider({});
+
   $(window).resize(function() {
     if ( $(window).width() > 480) {
       $('.goods-view, .goods-view__photo').css({'height': 'auto'});
@@ -13,8 +15,6 @@ $(document).ready(function() {
       $('.goods-view, .goods-view__photo').css({'height': 'auto'});
     }
   });
-
-  $('#cascade-slider').cascadeSlider({});
 
   $('#top-go').click(function(e) {
     e.preventDefault();

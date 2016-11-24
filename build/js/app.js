@@ -44,32 +44,14 @@ this.$element.trigger("shown.bs.collapse")};if(!t.support.transition)return r.ca
       itemCount = $item.length;
 
     var defaultIndex = 0;
+    var intervalTime = 3000;
+    var interval = setInterval(changeInteval, intervalTime);
 
     changeIndex(defaultIndex);
 
-    $arrow.on('click', function() {
-      var action = $(this).data('action'),
-        nowIndex = $item.index($this.find('.now'));
+    $('.cascade-slider_item').on('click', changeOnClick);
 
-      if(action == 'next') {
-        if(nowIndex == itemCount - 1) {
-          changeIndex(0);
-        } else {
-          changeIndex(nowIndex + 1);
-        }
-      } else if (action == 'prev') {
-        if(nowIndex == 0) {
-          changeIndex(itemCount - 1);
-        } else {
-          changeIndex(nowIndex - 1);
-        }
-      }
-
-      $('.cascade-slider_dot').removeClass('cur');
-      //$('.cascade-slider_dot').next().addClass('cur');
-    });
-
-    $('.cascade-slider_item').on('click', function() {
+    function changeOnClick() {
       var action = $(this).data('action'),
         nowIndex = $item.index($this.find('.now'));
 
@@ -86,37 +68,27 @@ this.$element.trigger("shown.bs.collapse")};if(!t.support.transition)return r.ca
           changeIndex(nowIndex - 1);
         }
       }
-    });
+
+      clearInterval(interval);
+      interval = setInterval(changeInteval, intervalTime);
+    }
+
     
+
+    function changeInteval() {
+      nowIndex = $item.index($this.find('.now'));
+      if(nowIndex == itemCount - 1) {
+        changeIndex(0);
+      } else {
+        changeIndex(nowIndex + 1);
+      }
+    }
     // add data attributes
     for (var i = 0; i < itemCount; i++) {
       $('.cascade-slider_item').each(function(i) {
         $(this).attr('data-slide-number', [i]);
       });
     }
-    
-    // dots
-    $('.cascade-slider_dot').bind('click', function(){
-      // add class to current dot on click
-      $('.cascade-slider_dot').removeClass('cur');
-      $(this).addClass('cur');
-
-      var index = $(this).index();
-
-      $('.cascade-slider_item').removeClass('now prev next');
-      var slide = $('.cascade-slider_slides').find('[data-slide-number=' + index + ']');
-      slide.prev().addClass('prev');
-      slide.addClass('now');
-      slide.next().addClass('next');
-
-      if(slide.next().length == 0) {
-        $('.cascade-slider_item:first-child').addClass('next');
-      }
-
-      if(slide.prev().length == 0) {
-        $('.cascade-slider_item:last-child').addClass('prev');
-      }
-    });
 
     function changeIndex(nowIndex) {
       // clern all class
@@ -142,6 +114,30 @@ this.$element.trigger("shown.bs.collapse")};if(!t.support.transition)return r.ca
         }
       });
     }
+
+    $this.addClass('is-active');
+
+    if ( $( window ).width() < 768 && $this.hasClass('is-active') ) {
+      clearInterval(interval);
+      $('.cascade-slider_item').off('click', changeOnClick);
+      $this.removeClass('is-active');
+    } else if ( $( window ).width() > 767 &&!$this.hasClass('is-active') ){
+      $this.addClass('is-active');
+      interval = setInterval(changeInteval, intervalTime);
+      $('.cascade-slider_item').on('click', changeOnClick);
+    }
+    
+    $( window ).resize(function() {
+      if ( $( window ).width() < 768 && $this.hasClass('is-active') ) {
+        clearInterval(interval);
+        $('.cascade-slider_item').off('click', changeOnClick);
+        $this.removeClass('is-active');
+      } else if ( $( window ).width() > 767 &&!$this.hasClass('is-active') ){
+        $this.addClass('is-active');
+        interval = setInterval(changeInteval, intervalTime);
+        $('.cascade-slider_item').on('click', changeOnClick);
+      }
+    });
   };
 })(jQuery);
 
@@ -152,6 +148,8 @@ $(document).ready(function() {
     setEqualHeight($('.goods-view, .goods-view__photo'));
   }
 
+  $('#cascade-slider').cascadeSlider({});
+
   $(window).resize(function() {
     if ( $(window).width() > 480) {
       $('.goods-view, .goods-view__photo').css({'height': 'auto'});
@@ -160,8 +158,6 @@ $(document).ready(function() {
       $('.goods-view, .goods-view__photo').css({'height': 'auto'});
     }
   });
-
-  $('#cascade-slider').cascadeSlider({});
 
   $('#top-go').click(function(e) {
     e.preventDefault();
