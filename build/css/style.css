@@ -2471,6 +2471,9 @@ input[type="search"]::-webkit-search-decoration, input[type="search"]::-webkit-s
  .footer__copyright{ margin-top: 20px; }
  .footer{ padding-bottom: 25px; }
  .special-propose__form{ width: auto; padding-right: 15px; } }
+@media screen and (max-width: 767px){
+  .fabrics-list__item{ width: auto; text-align: center; }
+}
 @media screen and (max-width: 479px){
  .goods-view__photo{ float: none; width: 100%; text-align: center; }
  .goods-view__img{ -webkit-border-radius: 5px; border-radius: 5px; }
